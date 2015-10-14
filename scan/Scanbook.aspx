@@ -15,7 +15,7 @@
                 $('#comment').val(" ");
                 $('#table').attr('style', 'display: none');
                 document.getElementById("ISBN").disabled = false;
-                
+                document.getElementById("alert").innerHTML = " ";
             }
             );
             $('#BtnReadStatus').click(function () {
