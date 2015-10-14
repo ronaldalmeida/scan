@@ -8,3 +8,8 @@ C:\Users\ronal\Desktop\scanbook-Dev\scan\bin\scan.pdb
 C:\Users\ronal\Desktop\scanbook-Dev\scan\obj\Debug\scan.csprojResolveAssemblyReference.cache
 C:\Users\ronal\Desktop\scanbook-Dev\scan\obj\Debug\scan.dll
 C:\Users\ronal\Desktop\scanbook-Dev\scan\obj\Debug\scan.pdb
+C:\Users\ronal\Desktop\scan\scan\bin\scan.dll
+C:\Users\ronal\Desktop\scan\scan\bin\scan.pdb
+C:\Users\ronal\Desktop\scan\scan\obj\Debug\scan.csprojResolveAssemblyReference.cache
+C:\Users\ronal\Desktop\scan\scan\obj\Debug\scan.dll
+C:\Users\ronal\Desktop\scan\scan\obj\Debug\scan.pdb

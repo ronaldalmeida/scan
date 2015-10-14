@@ -14,6 +14,8 @@
                 $('#ISBN').val("");
                 $('#comment').val(" ");
                 $('#table').attr('style', 'display: none');
+                document.getElementById("ISBN").disabled = false;
+                
             }
             );
             $('#BtnReadStatus').click(function () {
@@ -26,7 +28,7 @@
                     async: true,
                     success: function (data) {
                         $('#BtnReadStatus').attr('value', 'Read');
-                                            },
+                    },
                     error: function (err)
                     { alert("Insert a Valid ISBN"); }
                 });
@@ -52,50 +54,57 @@
 
             $('#btnGetBookDetails').click(function ()
             {
-                var ISBN = $('#ISBN').val();
-                $('#comment').val(" ") ;
-                $.ajax({
-                    url: 'GetBook.asmx/GetBookDetails',
-                    data: { ISBN: ISBN },
-                    method: 'post',
-                    dataType: 'json',
-                    async: true,
-                    success: function (data)
-                    {   
-                        if (data.totalitems == 0)
-                        { alert("Book Not Found, Make sure you have typed the correct ISBN"); }
-                        else {
+                document.getElementById("alert").innerHTML = " ";
+                if (!isNaN($('#ISBN').val()) && ($('#ISBN').val().length == 10 || $('#ISBN').val().length == 13)) {
 
-                            if (!data.source)
+                    var ISBN = $('#ISBN').val();
+                    $('#comment').val(" ");
+                    $.ajax({
+                        url: 'GetBook.asmx/GetBookDetails',
+                        data: { ISBN: ISBN },
+                        method: 'post',
+                        dataType: 'json',
+                        async: true,
+                        success: function (data) {
+                            if (data.totalitems == 0)
                             {
                                 
-                                $('#Title').val(data.items[0].volumeInfo.title);
-                                if (data.items[0].volumeInfo.authors == null)
+                                document.getElementById("alert").innerHTML = "Book Not Found, Make sure you have typed the correct ISBN";
+                            }
+                            else {
+
+                                if (!data.source) {
+
+                                    $('#Title').val(data.items[0].volumeInfo.title);
+                                    if (data.items[0].volumeInfo.authors == null)
                                     { $('#Author').val("N/A"); }
-                                else
+                                    else
                                     { $('#Author').val(data.items[0].volumeInfo.authors); }
-                                $('#PageCount').val(data.items[0].volumeInfo.pageCount);
-                                $('#table').attr('style', 'display: block');
-                                $('#BtnReadStatus').attr('value', 'Unread');
-                               
-                            }
-                            else
-                            {
-                                var RD = data.ReadStatus;
-                                $('#table').attr('style', 'display: block');
-                                $('#BtnReadStatus').attr('value', RD);
-                                
-                                $('#comment').val(data.comment);
-                                $('#Title').val(data.title1);
-                                $('#Author').val(data.authors1); 
-                                $('#PageCount').val(data.pageCount1);
-                            }
-                        }
+                                    $('#PageCount').val(data.items[0].volumeInfo.pageCount);
+                                    $('#table').attr('style', 'display: block');
+                                    $('#BtnReadStatus').attr('value', 'Unread');
+                                    document.getElementById("ISBN").disabled = true;
+                                    
 
-                    },
-                    error: function (err)
-                    { alert("Insert a Valid ISBN"); }
-                });
+                                }
+                                else {
+                                    var RD = data.ReadStatus;
+                                    $('#table').attr('style', 'display: block');
+                                    $('#BtnReadStatus').attr('value', RD);
+                                    document.getElementById("ISBN").disabled = true;
+                                    $('#comment').val(data.comment);
+                                    $('#Title').val(data.title1);
+                                    $('#Author').val(data.authors1);
+                                    $('#PageCount').val(data.pageCount1);
+                                }
+                            }
+
+                        },
+                        error: function (err)
+                        { alert("Insert a Valid ISBN"); }
+                    });
+                }
+                else { document.getElementById("alert").innerHTML = "Enter Valid 10 or 13 digit ISBN number"; }
             });
         });
 
@@ -108,7 +117,8 @@
     ISBN : 
     <input id="ISBN" title="type" style="width:120px"/> 
     <input type="button" id="btnGetBookDetails" value="Get Book Details" />
-    <input type="button" id="btnClear" value="Clear" /> <br /><br /> 
+    <input type="button" id="btnClear" value="Clear" /> 
+    &nbsp&nbsp<Label id="alert" style="color:red"></Label><br /><br /> 
 
 
     <table id="table" style="display:none" > 
