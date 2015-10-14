@@ -55,7 +55,7 @@
             $('#btnGetBookDetails').click(function ()
             {
                 document.getElementById("alert").innerHTML = " ";
-                if (!isNaN($('#ISBN').val()) && ($('#ISBN').val().length == 10 || $('#ISBN').val().length == 13)) {
+                if (($('#ISBN').val().length == 10 || $('#ISBN').val().length == 13)) {
 
                     var ISBN = $('#ISBN').val();
                     $('#comment').val(" ");
