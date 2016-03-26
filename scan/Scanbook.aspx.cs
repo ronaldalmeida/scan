@@ -11,7 +11,7 @@ namespace scan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            StatusText.Text = string.Format("Hello {0}!!", User.Identity.Name);
+            StatusText.Text = string.Format("Hello {0}!", User.Identity.Name);
         }
     }
 }
