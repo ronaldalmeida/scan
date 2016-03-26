@@ -13,3 +13,9 @@ C:\Users\ronal\Desktop\scan\scan\bin\scan.pdb
 C:\Users\ronal\Desktop\scan\scan\obj\Debug\scan.csprojResolveAssemblyReference.cache
 C:\Users\ronal\Desktop\scan\scan\obj\Debug\scan.dll
 C:\Users\ronal\Desktop\scan\scan\obj\Debug\scan.pdb
+C:\Users\ronal\Source\Repos\scan\scan\bin\scan.dll.config
+C:\Users\ronal\Source\Repos\scan\scan\bin\scan.dll
+C:\Users\ronal\Source\Repos\scan\scan\bin\scan.pdb
+C:\Users\ronal\Source\Repos\scan\scan\obj\Debug\scan.csprojResolveAssemblyReference.cache
+C:\Users\ronal\Source\Repos\scan\scan\obj\Debug\scan.dll
+C:\Users\ronal\Source\Repos\scan\scan\obj\Debug\scan.pdb
