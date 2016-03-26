@@ -114,6 +114,8 @@
 <body > 
     <div  style="width:auto;align-self:auto">
         <br /><br />
+     <asp:Label ID="StatusText" runat="server" Text=""></asp:Label>
+        <br /><br />
     ISBN : 
     <input id="ISBN" title="type" style="width:120px"/> 
     <input type="button" id="btnGetBookDetails" value="Get Book Details" />

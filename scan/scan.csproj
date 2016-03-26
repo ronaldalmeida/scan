@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="GetBook.asmx" />
     <Content Include="jquery-1.11.3.js" />
+    <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scanbook.aspx" />
     <Content Include="Web.config" />
@@ -106,6 +107,13 @@
     <Compile Include="GetBook.asmx.cs">
       <DependentUpon>GetBook.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
@@ -122,6 +130,7 @@
     <Compile Include="Scanbook.aspx.designer.cs">
       <DependentUpon>Scanbook.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
